@@ -1,0 +1,41 @@
+<mat-card *ngIf="product$ | async as product; else loading">
+    <mat-card-header>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="image-gallery">
+        <mat-card *ngFor="let image of product.images">
+          <img mat-card-image [src]="image" alt="{{ product.name }}" />
+        </mat-card>
+      </div>
+
+      <div class="product-description">
+        <h3>Description</h3>
+        <p>{{ product.description }}</p>
+      </div>
+  
+      <div class="product-price">
+        <h3>Price</h3>
+        <p>{{ product.price | currency }}</p>
+      </div>
+
+      <div class="product-stock">
+        <h3>Stock</h3>
+        <p>{{ product.stock }} items available</p>
+      </div>
+
+      <div class="product-rating">
+        <h3>Rating</h3>
+        <p>{{ product.rating }} stars</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
+  <ng-template #loading>
+    <mat-card>
+      <mat-card-content>Loading...</mat-card-content>
+    </mat-card>
+  </ng-template>
+  

@@ -1,0 +1,70 @@
+/* Container for the form */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for mat-form-field components */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  /* Style for input fields */
+  mat-input {
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  /* Style for error messages */
+  mat-error {
+    font-size: 12px;
+    color: #f44336; /* Red color for error messages */
+    margin-top: 4px;
+  }
+  
+  /* Style for the submit button */
+  button[mat-raised-button] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #1976d2; /* Primary color */
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Hover effect for the submit button */
+  button[mat-raised-button]:hover {
+    background-color: #1565c0; /* Darker shade of primary color */
+  }
+  
+  /* Style for mat-select */
+  mat-select {
+    font-size: 16px;
+  }
+  
+  /* Style for mat-slider */
+  mat-slider {
+    width: 100%;
+    margin: 16px 0;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    form {
+      padding: 15px;
+    }
+  
+    button[mat-raised-button] {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  

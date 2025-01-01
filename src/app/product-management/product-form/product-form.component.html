@@ -1,0 +1,69 @@
+<h2 style="text-align: center;">Add New Product</h2>
+
+<form (ngSubmit)="addProduct()">
+  <mat-form-field appearance="fill">
+    <mat-label>Product Name</mat-label>
+    <input matInput id="name" [(ngModel)]="newProduct.name" name="name" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <mat-select [(ngModel)]="newProduct.category" name="category" required>
+      <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Sub-category</mat-label>
+    <mat-select [(ngModel)]="newProduct.subCategory" name="subCategory" required>
+      <mat-option *ngFor="let subCategory of subCategories" [value]="subCategory">{{ subCategory }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput id="description" [(ngModel)]="newProduct.description" name="description" required></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Price</mat-label>
+    <input matInput id="price" [(ngModel)]="newProduct.price" name="price" required type="number" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Stock Level</mat-label>
+    <input matInput id="stockLevel" [(ngModel)]="newProduct.stock" name="stockLevel" required type="number" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Rating</mat-label>
+    <input matInput id="rating" [(ngModel)]="newProduct.rating" name="rating" required type="number" min="1" max="5" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Discount</mat-label>
+    <input matInput id="discount" [(ngModel)]="newProduct.discount" name="discount" required type="number" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Brand</mat-label>
+    <input matInput id="brand" [(ngModel)]="newProduct.brand" name="brand" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Date Added</mat-label>
+    <input matInput [matDatepicker]="picker" id="dateAdded" [(ngModel)]="newProduct.dateAdded" name="dateAdded" required />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <label for="image">Product Image(s):</label>
+  <input type="file" id="image" (change)="onImageSelected($event)" multiple />
+
+  <div *ngIf="imagePreview">
+    <h4>Image Preview:</h4>
+    <img [src]="imagePreview" alt="Product Image" width="100" height="100" />
+  </div>
+
+  <button mat-raised-button color="primary" type="submit">Add Product</button>
+</form>

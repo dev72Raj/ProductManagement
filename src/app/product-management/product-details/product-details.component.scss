@@ -1,0 +1,32 @@
+/* product-details.component.scss */
+
+mat-card {
+    margin: 16px;
+  }
+  
+  .image-gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+  }
+  
+  mat-card img {
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .product-description, .product-price, .product-stock, .product-rating {
+    margin-top: 16px;
+  }
+  
+  .product-description h3, .product-price h3, .product-stock h3, .product-rating h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .product-description p, .product-price p, .product-stock p, .product-rating p {
+    font-size: 1em;
+    color: #333;
+  }
+  
